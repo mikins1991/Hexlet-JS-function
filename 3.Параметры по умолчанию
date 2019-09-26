@@ -1,0 +1,24 @@
+const substr = (str, start, strLength) => {
+  if (str === ''){
+       return str;
+  }
+  if (strLength < 0) {
+    strLength = 1;
+  }
+  if (start < 0 || start===undefined) {
+    start = 0;
+  }
+  if (strLength === 0 || start > str.length) {
+    str = "";
+  }
+  if (start + strLength - 1 > str.length ||strLength===undefined) {
+    strLength = str.length;
+  }
+  let result = "";
+  for (let i = start; i < strLength; i += 1) {
+    result = result   + str[i];
+  }
+  str = result;
+  return str;
+};
+export default substr;
